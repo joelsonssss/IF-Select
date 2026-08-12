@@ -66,8 +66,7 @@ def main(page: ft.Page):
             text_align=ft.TextAlign.CENTER,
             size=20,
         ),
-        content_padding=ft.padding.all(30),
-        inset_padding=ft.padding.all(10),
+  
         modal=True,
         shape=ft.RoundedRectangleBorder(radius=0),
         actions=[
