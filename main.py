@@ -1,8 +1,4 @@
 import flet as ft
-import json
-import os
-import sys
-from pathlib import Path
 
 lista_aplicacao_geral = ("Bobinadeira", "Bomba deslocamento positivo", "Compressor", "Centrifugadora", "Elevador de carga c/ cremalheira", "Elevador de carga c/ contrapeso","Guindaste", "Extrusora", "Lavadora industrial", "Máquina operatriz", "Misturador", "Ponte rolante", "Bomba centrífuga", "Ventilador e Exaustor", "Esteira transportadora", "Outros")
 lista_aplicacao_if20 = ("Bobinadeira", "Bomba deslocamento positivo", "Compressor", "Centrfugadora", "Elevador de carga c/ cremalheira","Elevador de carga c/ contrapeso", "Guindaste", "Extrusora", "Lavadora industrial", "Máquina operatriz", "Misturador", "Ponte rolante")
