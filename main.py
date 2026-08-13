@@ -1,6 +1,6 @@
 import flet as ft
 
-lista_aplicacao_geral = ("Bobinadeira", "Bomba deslocamento positivo", "Compressor", "Centrifugadora", "Elevador de carga c/ cremalheira", "Elevador de carga c/ contrapeso","Guindaste", "Extrusora", "Lavadora industrial", "Máquina operatriz", "Misturador", "Ponte rolante", "Bomba centrífuga", "Ventilador e Exaustor", "Esteira transportadora", "Outros")
+lista_aplicacao_geral = ("Bobinadeira", "Bomba deslocamento positivo", "Compressor", "Centrifugadora", "Elevador de carga c/ cremalheira", "Elevador de carga c/ contrapeso","Guindaste", "Extrusora", "Lavadora industrial", "Máquina operatriz", "Misturador", "Ponte rolante", "Bomba centrífuga", "Ventilador e Exaustor", "Esteira transportadora","Outros")
 lista_aplicacao_if20 = ("Bobinadeira", "Bomba deslocamento positivo", "Compressor", "Centrfugadora", "Elevador de carga c/ cremalheira","Elevador de carga c/ contrapeso", "Guindaste", "Extrusora", "Lavadora industrial", "Máquina operatriz", "Misturador", "Ponte rolante")
 lista_aplicacao_if10 = ("Bomba centrífuga","Ventilador e Exaustor", "Esteira transportadora")
 lista_aplicacao_if10_20 = ("Bobinadeira", "Bomba deslocamento positivo", "Compressor", "Centrifugadora", "Elevador de carga c/ cremalheira", "Elevador de carga c/ contrapeso","Guindaste", "Extrusora", "Lavadora industrial", "Máquina operatriz", "Misturador", "Ponte rolante", "Bomba centrífuga", "Ventilador e Exaustor", "Esteira transportadora")
@@ -46,11 +46,10 @@ def main(page: ft.Page):
     
     def fechar_dialogo(e):
         ad1.open = False
+        ad2.open = False
+        ad3.open = False
+        ad4.open = False    
         page.update()
-
-
-
-
 
     ad1 = ft.AlertDialog(
         bgcolor="#FFFFFF",
@@ -83,25 +82,147 @@ def main(page: ft.Page):
         actions_alignment=ft.MainAxisAlignment.CENTER,
     )
 
-
-  
-
-
     # Adiciona o AlertDialog à camada superior da página
     page.overlay.append(ad1)
-
+    
     # Abre o diálogo automaticamente
     ad1.open = True
     page.update()
-    
 
+
+    ad2 = ft.AlertDialog(
+        bgcolor="#FFFFFF",
+        title=ft.Text(
+            value="Atenção",
+            text_align=ft.TextAlign.CENTER,
+        ),
+        content=ft.Text(
+            value=(
+                "Selecione: Aplicação | Tensão | Potência"
+                
+            ),
+            text_align=ft.TextAlign.CENTER,
+            size=20,
+        ),
+  
+        modal=True,
+        shape=ft.RoundedRectangleBorder(radius=0),
+        actions=[
+            ft.ElevatedButton(
+                text="Fechar",
+                on_click=fechar_dialogo,
+                style=ft.ButtonStyle(
+                    bgcolor="#0A2D42",
+                    color=ft.Colors.WHITE,
+                    shape=ft.RoundedRectangleBorder(radius=0),
+                ),
+            ),
+        ],
+        actions_alignment=ft.MainAxisAlignment.CENTER,
+    )
+
+    # Adiciona o AlertDialog à camada superior da página
+    page.overlay.append(ad2)
+    
+    # Abre o diálogo automaticamente
+   # ad2.open = True
+    page.update()
+
+
+    ad3 = ft.AlertDialog(
+        bgcolor="#FFFFFF",
+        title=ft.Text(
+            value="Atenção",
+            text_align=ft.TextAlign.CENTER,
+        ),
+        content=ft.Text(
+            value=(
+                "Selecione: Aplica 1 modúlo"
+                
+            ),
+            text_align=ft.TextAlign.CENTER,
+            size=20,
+        ),
+  
+        modal=True,
+        shape=ft.RoundedRectangleBorder(radius=0),
+        actions=[
+            ft.ElevatedButton(
+                text="Fechar",
+                on_click=fechar_dialogo,
+                style=ft.ButtonStyle(
+                    bgcolor="#0A2D42",
+                    color=ft.Colors.WHITE,
+                    shape=ft.RoundedRectangleBorder(radius=0),
+                ),
+            ),
+        ],
+        actions_alignment=ft.MainAxisAlignment.CENTER,
+    )
+
+    # Adiciona o AlertDialog à camada superior da página
+    page.overlay.append(ad3)
+    
+    # Abre o diálogo automaticamente
+   # ad2.open = True
+    page.update()
+
+
+    ad4 = ft.AlertDialog(
+        bgcolor="#FFFFFF",
+        title=ft.Text(
+            value="Atenção",
+            text_align=ft.TextAlign.CENTER,
+        ),
+        content=ft.Text(
+            value=(
+                "Selecione: Não temos modelo 380V”, "
+                
+            ),
+            text_align=ft.TextAlign.CENTER,
+            size=20,
+        ),
+  
+        modal=True,
+        shape=ft.RoundedRectangleBorder(radius=0),
+        actions=[
+            ft.ElevatedButton(
+                text="Fechar",
+                on_click=fechar_dialogo,
+                style=ft.ButtonStyle(
+                    bgcolor="#0A2D42",
+                    color=ft.Colors.WHITE,
+                    shape=ft.RoundedRectangleBorder(radius=0),
+                ),
+            ),
+        ],
+        actions_alignment=ft.MainAxisAlignment.CENTER,
+    )
+
+    # Adiciona o AlertDialog à camada superior da página
+    page.overlay.append(ad4)
+    
+    # Abre o diálogo automaticamente
+   # ad2.open = True
+    page.update()
+
+
+
+
+
+
+
+
+
+    
     def buscar(e):
         
         aplicacao = str(aplicacao_dropdown.value)
-        tensao = str(alimentacao_dropdown.value)
+        tensao = str(tensao_dropdown.value)
         potencia = str(potencia_dropdown.value)
         comunicacao = str(comunicacao_dropdown.value)
         adcional = str(adicional_dropdown.value)
+        
 
 # DEFINE QUAL MODELO USAR IF10 OU IF20 ou IF30
     # ==============================
@@ -1730,11 +1851,24 @@ def main(page: ft.Page):
             f5 = ""
             f6 = ""                    
 
-        if not aplicacao in lista_aplicacao_geral or not tensao in lista_tensao or not potencia in lista_potencia_geral:
-            ad1.open = True
+        if (not aplicacao in lista_aplicacao_geral or not tensao in lista_tensao or not potencia in lista_potencia_geral):
+            ad2.open = True
             page.update()
-        
-                        
+            
+        if comunicacao in lista_if30_comunicacao and adcional in lista_if30_adicionais:
+            ad3.open = True
+            page.update() 
+                                   
+        elif (tensao == "380V" and (comunicacao in lista_if30_comunicacao or adcional in lista_if30_adicionais)):
+            ad3.open = True
+            page.update()
+
+
+        elif (tensao == "380V" and (comunicacao in lista_if30_comunicacao or adcional in lista_if30_adicionais)):
+            ad4.open = True
+            page.update()
+
+
 
 
 
@@ -1801,7 +1935,7 @@ def main(page: ft.Page):
         content=ft.Column(
             controls=[
                 ft.Text(value="ALIMENTAÇÃO",color="#0A2D42"),
-                alimentacao_dropdown := ft.Dropdown(
+                tensao_dropdown := ft.Dropdown(
                     width=400,
                     label="Selecione a tensão do motor",
                     label_style=ft.TextStyle(size=12),
@@ -2005,9 +2139,9 @@ def main(page: ft.Page):
     rodape = ft.Container(
         alignment=ft.alignment.center,
         height=20,
-        bgcolor="#0A2D42",
+        bgcolor="#F8FBFB",#0A2D42
         content=ft.Text("© Todos os direitos reservado - Metaltex  (versão 1.03)",
-        color=ft.Colors.WHITE,
+        color=ft.Colors.BLACK,
         size=9,
         text_align=ft.TextAlign.CENTER,
     ),
