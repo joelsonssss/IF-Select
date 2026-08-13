@@ -1730,8 +1730,11 @@ def main(page: ft.Page):
             f5 = ""
             f6 = ""                    
 
-        #if not aplicacao in lista_aplicacao_geral or not tensao in lista_tensao or not potencia in lista_potencia_geral:
-            
+        if not aplicacao in lista_aplicacao_geral or not tensao in lista_tensao or not potencia in lista_potencia_geral:
+            ad1.open = True
+            page.update()
+        
+                        
 
 
 
