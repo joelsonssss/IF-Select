@@ -44,55 +44,55 @@ def main(page: ft.Page):
     page.window_maximizable =False
     
     
-#    def fechar_dialogo(e):
-#        ad1.open = False
-#        page.update()
+    def fechar_dialogo(e):
+        ad1.open = False
+        page.update()
 
 
 
 
 
-#    ad1 = ft.AlertDialog(
-#        bgcolor="#FFFFFF",
-#        title=ft.Text(
-#            value="Atenção",
-#            text_align=ft.TextAlign.CENTER,
-#        ),
-#        content=ft.Text(
-#            value=(
-#                "Selecione os campos de “Aplicação”, "
-#                "“Tensão” e “Potência” para visualizar os resultados."
-#            ),
-#            text_align=ft.TextAlign.CENTER,
-#            size=20,
-#        ),
-#  
-#        modal=True,
-#        shape=ft.RoundedRectangleBorder(radius=0),
-#        actions=[
-#            ft.ElevatedButton(
-#                text="Fechar",
-#                on_click=fechar_dialogo,
-#                style=ft.ButtonStyle(
-#                    bgcolor="#0A2D42",
-#                    color=ft.Colors.WHITE,
-#                    shape=ft.RoundedRectangleBorder(radius=0),
-#                ),
-#            ),
-#        ],
-#        actions_alignment=ft.MainAxisAlignment.CENTER,
-#    )
+    ad1 = ft.AlertDialog(
+        bgcolor="#FFFFFF",
+        title=ft.Text(
+            value="Atenção",
+            text_align=ft.TextAlign.CENTER,
+        ),
+        content=ft.Text(
+            value=(
+                "Selecione os campos de “Aplicação”, "
+                "“Tensão” e “Potência” para visualizar os resultados."
+            ),
+            text_align=ft.TextAlign.CENTER,
+            size=20,
+        ),
+  
+        modal=True,
+        shape=ft.RoundedRectangleBorder(radius=0),
+        actions=[
+            ft.ElevatedButton(
+                text="Fechar",
+                on_click=fechar_dialogo,
+                style=ft.ButtonStyle(
+                    bgcolor="#0A2D42",
+                    color=ft.Colors.WHITE,
+                    shape=ft.RoundedRectangleBorder(radius=0),
+                ),
+            ),
+        ],
+        actions_alignment=ft.MainAxisAlignment.CENTER,
+    )
 
 
   
 
 
     # Adiciona o AlertDialog à camada superior da página
-#    page.overlay.append(ad1)
+    page.overlay.append(ad1)
 
     # Abre o diálogo automaticamente
-#    ad1.open = True
-#    page.update()
+    ad1.open = True
+    page.update()
     
 
     def buscar(e):
