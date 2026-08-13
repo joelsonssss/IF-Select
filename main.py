@@ -26,10 +26,6 @@ lista_if30_adicionais = ("EXPANSÃO IO", "EXPANSÃO P/ ENCODER 5V","EXPANSÃO P/
 lista_if30_recursos_adicionais = ("COMUNICAÇÃO CANOPEN", "COMUNICAÇÃO ETHERCAT", "COMUNICAÇÃO MODBUS-TCP", "COMUNICAÇÃO PROFINET","EXPANSÃO IO", "EXPANSÃO P/ ENCODER 5V", "EXPANSÃO P/ ENCODER PUSH-PULL 24V", "SEGURANÇA STO (NR12)")
 lista_if30_tensao = ("220V", "380V-440V")
 
-
-
-
-
 def main(page: ft.Page):
     page.title = "Aplicações IF"
     page.theme_mode = ft.ThemeMode.LIGHT
@@ -42,7 +38,6 @@ def main(page: ft.Page):
     page.window_maximized = True
     page.window_resizable = True
     page.window_maximizable =False
-    
     
     def fechar_dialogo(e):
         ad1.open = False
@@ -89,7 +84,6 @@ def main(page: ft.Page):
     ad1.open = True
     page.update()
 
-
     ad2 = ft.AlertDialog(
         bgcolor="#FFFFFF",
         title=ft.Text(
@@ -128,7 +122,6 @@ def main(page: ft.Page):
    # ad2.open = True
     page.update()
 
-
     ad3 = ft.AlertDialog(
         bgcolor="#FFFFFF",
         title=ft.Text(
@@ -166,7 +159,6 @@ def main(page: ft.Page):
     # Abre o diálogo automaticamente
    # ad2.open = True
     page.update()
-
 
     ad4 = ft.AlertDialog(
         bgcolor="#FFFFFF",
@@ -207,14 +199,6 @@ def main(page: ft.Page):
     page.update()
 
 
-
-
-
-
-
-
-
-    
     def buscar(e):
         
         aplicacao = str(aplicacao_dropdown.value)
@@ -223,7 +207,6 @@ def main(page: ft.Page):
         comunicacao = str(comunicacao_dropdown.value)
         adcional = str(adicional_dropdown.value)
         
-
 # DEFINE QUAL MODELO USAR IF10 OU IF20 ou IF30
     # ==============================
         # IF10
@@ -1860,17 +1843,8 @@ def main(page: ft.Page):
             page.update() 
                                    
         elif (tensao == "380V" and (comunicacao in lista_if30_comunicacao or adcional in lista_if30_adicionais)):
-            ad3.open = True
-            page.update()
-
-
-        elif (tensao == "380V" and (comunicacao in lista_if30_comunicacao or adcional in lista_if30_adicionais)):
             ad4.open = True
             page.update()
-
-
-
-
 
         valor_resultado_inversor = f"Inversor: {f1}-{f9}{pot} {f5} {f6}"
         
@@ -1879,7 +1853,6 @@ def main(page: ft.Page):
         resultado_texto_atencao_resistor_frenagem.value = ate2  
         resultado_texto_resistor_frenagem.value = var_inf_resistor_frenagem
         resultado_texto_guia_selecao.value = ate0
-        
         
         page.update() 
          
@@ -1928,7 +1901,6 @@ def main(page: ft.Page):
             )
         )
 
-    
     ss_alimentacao = ft.Container(
         alignment=ft.alignment.center,
         padding=ft.padding.only(left=15, right=15, top=0, bottom=10),
@@ -1950,7 +1922,6 @@ def main(page: ft.Page):
         )  
     )
     
-
     ss_potencia = ft.Container(
         alignment=ft.alignment.center,
         padding=ft.padding.only(left=15, right=15, top=0, bottom=10),
@@ -2085,8 +2056,7 @@ def main(page: ft.Page):
             ]
         )    
     )                           
-    
-    
+      
     ss_texto_atencao_resitor_frenagem = ft.Container(
         alignment=ft.alignment.center,
         padding=ft.padding.only(left=15, right=15, top=0, bottom=0),
